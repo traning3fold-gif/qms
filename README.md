@@ -8,10 +8,10 @@ Deploy this folder directly to GitHub Pages.
 ├── style.css
 ├── script.js
 └── assets/
-    ├── 3FOLD Logo 2022.png
-    └── CQI IRCA Approved Training Partner logo - 3FOLD.jpg
+    ├── 3fold-logo.png
+    └── cqi-irca-logo.jpg
 
 ## Deployment Instructions:
-1. Place the two logo images provided in the 'assets' folder exactly as named above.
+1. Place the two logo images provided in the 'assets' folder named as '3fold-logo.png' and 'cqi-irca-logo.jpg'.
 2. Push all files to a new GitHub repository.
 3. Go to Settings > Pages in your GitHub repository and select the main branch to deploy.
