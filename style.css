@@ -173,10 +173,8 @@ header.scrolled {
 
 .logo img {
     height: 50px;
-    width: auto; 
-    max-width: 100%;
+    width: auto;
     object-fit: contain;
-    display: block;
 }
 
 #nav-menu {
@@ -275,8 +273,6 @@ header.scrolled {
 
 .irca-logo {
     max-width: 200px;
-    width: 200px;
-    max-width: 100%;
     background: white;
     padding: 10px;
     border-radius: 8px;
@@ -311,18 +307,12 @@ header.scrolled {
 
 .trust-logo {
     max-width: 250px;
-    width: 250px;
-    max-width: 100%;
     height: auto;
-    display: inline-block;
 }
 
 .trust-logo-large {
     max-width: 300px;
-    width: 300px;
-    max-width: 100%;
     height: auto;
-    display: inline-block;
 }
 
 .stat-card {
