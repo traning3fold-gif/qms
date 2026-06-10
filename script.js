@@ -14,6 +14,16 @@ mobileToggle.addEventListener('click', () => {
     }
 });
 
+// Header Scroll Effect
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
 // Close mobile menu when clicking a link
 const navLinks = document.querySelectorAll('.nav-list a');
 navLinks.forEach(link => {

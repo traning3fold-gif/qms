@@ -1,15 +1,16 @@
 /* CSS Reset & Variables */
 :root {
-    --navy: #0B2B56;
-    --teal: #008080;
-    --light-teal: #e0f2f1;
-    --dark: #333333;
-    --light: #f4f7f6;
+    --navy: #0f172a;
+    --teal: #0d9488;
+    --light-teal: #f0fdfa;
+    --dark: #1e293b;
+    --light: #f8fafc;
     --white: #ffffff;
-    --gray: #6c757d;
+    --gray: #64748b;
+    --accent: #2dd4bf;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Open Sans', sans-serif;
-    --transition: all 0.3s ease;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -20,12 +21,13 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
     font-family: var(--font-body);
     color: var(--dark);
-    line-height: 1.6;
+    line-height: 1.7;
     background-color: var(--white);
     overflow-x: hidden;
 }
@@ -53,7 +55,7 @@ ul {
 }
 
 .section-padding {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .text-center { text-align: center; }
@@ -78,7 +80,7 @@ ul {
 .w-100 { width: 100%; }
 
 .section-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--navy);
     margin-bottom: 1rem;
 }
@@ -90,7 +92,7 @@ ul {
 
 /* Grids */
 .grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.grid-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.grid-3-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
 .grid-4-col { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .align-center { align-items: center; }
 
@@ -113,16 +115,16 @@ ul {
 .btn-primary:hover {
     background-color: #006666;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 128, 128, 0.3);
+    box-shadow: 0 10px 20px -5px rgba(13, 148, 136, 0.4);
 }
 
-.btn-secondary {
+.btn-outline-white {
     background-color: transparent;
     color: var(--white);
     border-color: var(--white);
 }
 
-.btn-secondary:hover {
+.btn-outline-white:hover {
     background-color: var(--white);
     color: var(--navy);
 }
@@ -141,14 +143,26 @@ ul {
     font-size: 1.1rem;
 }
 
+.btn-glow {
+    position: relative;
+    overflow: hidden;
+}
+
 /* Header */
 header {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: transparent;
+    transition: var(--transition);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 15px 0;
+    padding: 20px 0;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
 
 .header-container {
@@ -186,6 +200,8 @@ header {
 
 .mobile-toggle {
     display: none;
+    background: none;
+    border: none;
     font-size: 1.5rem;
     color: var(--navy);
     cursor: pointer;
@@ -193,9 +209,9 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--navy) 0%, #1a365d 100%);
+    background: radial-gradient(circle at top right, #1e3a8a, var(--navy));
     color: var(--white);
-    padding: 100px 0;
+    padding: 140px 0 100px;
     overflow: hidden;
 }
 
@@ -219,7 +235,7 @@ header {
 
 .hero h2 {
     font-size: 1.8rem;
-    color: var(--teal);
+    color: var(--accent);
     margin-bottom: 20px;
     font-weight: 600;
 }
@@ -237,17 +253,22 @@ header {
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 40px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
-.glass-card h3 {
+.glass-subtitle {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
     margin-bottom: 20px;
+    color: var(--accent);
 }
 
 .irca-logo {
@@ -348,7 +369,7 @@ header {
     background: var(--white);
     padding: 35px 25px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
 }
 
 .dark-card {
@@ -379,7 +400,7 @@ header {
 
 .hover-up:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
 }
 
 .hover-up h4 {
@@ -472,7 +493,7 @@ header {
     background: var(--teal);
     border: 4px solid var(--white);
     border-radius: 50%;
-    box-shadow: 0 0 0 3px var(--light-teal);
+    box-shadow: 0 0 0 4px var(--light-teal);
 }
 
 .timeline-content {
@@ -527,9 +548,9 @@ header {
 /* Form Card */
 .form-card {
     background: var(--white);
-    padding: 40px;
+    padding: 45px;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 20px 50px -12px rgba(0,0,0,0.1);
 }
 
 .form-group {
